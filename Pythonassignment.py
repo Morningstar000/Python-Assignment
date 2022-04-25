@@ -19,6 +19,9 @@ dict = sorted(dict.items(), key=lambda a: (-a[1], a[0]))
 for j in dict:
     print(j[0], j[1])
 
+    
+    
+    
 Q2
 # importing packages
 import statistics
@@ -36,6 +39,10 @@ sd = sr.std()
 # printing results
 print(min(sr), max(sr), '{:.2f}'.format(mean), '{:.2f}'.format(sd), '{:.2f}'.format(statistics.variance(sr)))
 
+
+
+
+
 Q3
 # Function return maximum area
 def maxArea(A, L):
@@ -52,6 +59,11 @@ def maxArea(A, L):
 a = [1, 8, 6, 2, 5, 4, 8, 3, 7]
 
 print(maxArea(a, len(a)))
+
+
+
+
+
 
 Q4
 # importing required packages
@@ -75,6 +87,11 @@ for i in range(1, len(values) + 1):
             counter += 1
 
 print(counter)
+
+
+
+
+
 
 Q5
 1
@@ -107,6 +124,39 @@ print(math.exp(1000))
 array = [1, 2]
 print(array[2])
 
+
+
+
+Q7
+from django.shortcuts import render  from.forms import ContactForm
+from django.core.mail import send_mail
+
+def contactview(request): name=''
+email='' comment=''
+
+form= ContactForm(request.POST or None)
+if form.is_valid():
+name= form.cleaned_data.get("name") 
+email= form.cleaned_data.get("email") comment=form.cleaned_data.get("comment")
+
+
+comment= name + " with the email, " + email + ", sent the following message:\n\n" + comment;
+send_mail('The title of this post', comment, 'admin@gmail.com', ['admin@gmail.com'])
+
+
+     context= {'form': form}
+     return render(request, 'contact/contact.html', context) 
+          else:
+                       context= {'form': form}
+                     return render(request, 'contact/contact.html', context) 
+ 
+
+
+
+
+
+
+
 Q8
 # Base class 1
 class Base1():
@@ -130,6 +180,12 @@ class Child(Base1, Base2):
 obj = Child()
 obj.show()
 obj.display()
+
+
+
+
+
+
 
 Q8
 class Point(object):
